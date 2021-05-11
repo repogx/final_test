@@ -65,7 +65,7 @@ int main(){
             p = p0;
             float ang_diff = p - p0;
             int adjusted_angle = angle_adj((int)ang_diff);
-            printf("\nAdjusted angle = %d\n",adjusted_angle);
+            printf("\nang1 = %f\nang2 = %f\nAdjusted angle = %d\n",p,p1,adjusted_angle);
             display_diff(adjusted_angle);
        }
        else if(theStep==3){
