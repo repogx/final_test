@@ -49,6 +49,9 @@ int main(){
        else if(theStep==2){
             printf("\n\nSTEP 2 REACHED\n\n");
         }
+       else if(theStep == 3){
+        printf("\n\nSTEP 3 REACHED\n\n");
+       }
       
        printf("\nReached end of while\n");
     }
