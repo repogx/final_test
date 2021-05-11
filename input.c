@@ -51,7 +51,7 @@ void closeJoystick(void){
 
 
 // Sample joystick input over a period:
-int delay = 1000;
+int delay = 1;
 
 void checkJoystick(){
     //printf("Entering checkJoystick");
@@ -69,14 +69,12 @@ void JoyStepper(unsigned int code){
     printf("\nReceived code %d\n",code);
     if(code == KEY_ENTER){
         if(get_step()==0){
-            check_gyro();
             printf("\nIncrementing step0\n");
             p0 =c;
             printf("%f",p0);   //Set the initial user angle
             step++;             // Increment to next step
         }
         else if(get_step()==1){
-            check_gyro();
             printf("\nIncrementing step1\n");
             p =data.z;       // Set second user angle
             step++;
