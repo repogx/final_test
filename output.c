@@ -76,12 +76,6 @@ void display_grid(int step){
        bm->pixel[3][6]=GREEN;bm->pixel[4][6]=GREEN;
        bm->pixel[3][7]=GREEN;bm->pixel[4][7]=GREEN;
    }
-   else if(step==2){
-       display_diff();
-   }
-
-        
-      
 } 
 
 
@@ -136,6 +130,8 @@ int * int2binary(int number){
 
 int angle_adj(int d){
     int a =0;
+    printf("\nD = %d",d);
+    sleep(3);
     if(d<0){
         a= -1*d;
         while(a>=360){
