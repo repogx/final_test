@@ -25,6 +25,8 @@ int main(){
     float p,p0,p1;
 
     int step1Stopper = 1;
+
+    int step2Stopper = 1;
     
     printf("\nBefore while\n");
     
@@ -53,15 +55,22 @@ int main(){
        else if(theStep== 1 && step1Stopper){
             display_grid(theStep);
             step1Stopper = 0;
+            p1 = p0;
             printf("\n\nSTEP 1 REACHED\n\n");
-        }
-       else if(theStep==2){
+       }
+       else if(theStep==2 && step2Stopper){
             printf("\n\nSTEP 2 REACHED\n\n");
-        }
-       else if(theStep == 3){
-        printf("\n\nSTEP 3 REACHED\n\n");
+            display_grid(theStep);
+            step2Stopper = 0;
+            p = p0;
+            
+
+       }
+       else if(theStep==3){
+       
        }
       
+
        printf("\nReached end of while\n");
     }
         
