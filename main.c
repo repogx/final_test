@@ -69,6 +69,8 @@ int main(){
             printf("\nang1 = %f\nang2 = %f\nAdjusted angle = %d\n",p,p1,adjusted_angle);
             sleep(5);
             display_diff(adjusted_angle);
+            sleep(5);
+            break;
        }
        else if(theStep==3){
        

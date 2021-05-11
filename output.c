@@ -15,7 +15,7 @@
 #define BLACK 0x0000
 #define WHITE 0xFFFF
 #define RED 0xF800
-#define GREEN 0x0FF0
+#define GREEN 0x7E0
 
 //prototype 
 void display_grid();
@@ -88,17 +88,20 @@ void display_diff(int ang_disp){
     int *the_diff = int2binary(ang_disp);
     int j = 0;
     printf("Displaying diff\n");
-    for(int i = 31; i >= 0; i--){
+    for(int i = 23; i < 31; i++){
         printf("%d",the_diff[i]);
+        int theval = *(the_diff+i);
         if(j == 8){
             break;
         }
-        if(the_diff[i] = 1){
+        if(theval){
+            printf("\nentered if : val = %d\n",theval);
             bm->pixel[j][0] = BLUE;
             bm->pixel[j][1] = BLUE;
             j++;
         }
         else{
+            printf("\nentered else : val = %d\n",theval);
             bm->pixel[j][0] = WHITE;
             bm->pixel[j][1] = WHITE;
             j++;
@@ -108,7 +111,8 @@ void display_diff(int ang_disp){
 }
 
 
-int * int2binary(int number){         
+int * int2binary(int number){
+    printf("\nconverting %d to binary\n",number);    
     int c, k; 
     int *binary_storage = (int *)malloc(sizeof(int)*32);                                                                
     int i = 0;       
@@ -122,7 +126,7 @@ int * int2binary(int number){
             binary_storage[i] = 0;                                                                                                  
             i++;                                                                                                                   
         }                                                                                                                    
-    }                                                                                                                       
+    }
     return binary_storage; 
 
 
