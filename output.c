@@ -88,7 +88,7 @@ void display_diff(int ang_disp){
     int *the_diff = int2binary(ang_disp);
     int j = 0;
     printf("Displaying diff\n");
-    for(int i = 23; i < 31; i++){
+    for(int i = 24; i <= 31; i++){
         printf("%d",the_diff[i]);
         int theval = *(the_diff+i);
         if(j == 8){
