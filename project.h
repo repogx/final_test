@@ -45,7 +45,7 @@ int get_step();
 
 int * int2binary(int);
 
-void display_diff(void);
+void display_diff(int);
 
 
 

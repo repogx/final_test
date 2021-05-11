@@ -87,7 +87,7 @@ void display_grid(int step){
 
 //Function to convert int base ten angular dixplacement into a binary base two value.
 
-void display_diff(){
+void display_diff(int ang_disp){
     clearFrameBuffer(fb,BLACK);
     sense_fb_bitmap_t *bm = fb->bitmap;
     printf("\nang_disp = %d\n",ang_disp);
