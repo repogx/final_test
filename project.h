@@ -26,6 +26,10 @@ void check_gyro();
 
 void configure_gyro();
 
+pi_i2c_t * get_device();
+
+coordinate_t get_data();
+
 //access and check joytick inputs.
 void openJoystick();
 

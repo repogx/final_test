@@ -90,9 +90,12 @@ void display_grid(int step){
 void display_diff(){
     clearFrameBuffer(fb,BLACK);
     sense_fb_bitmap_t *bm = fb->bitmap;
+    printf("\nang_disp = %d\n",ang_disp);
     int *the_diff = int2binary(ang_disp);
     int j = 0;
-    for(int i = 32; i >= 0; i--){
+    printf("Displaying diff\n");
+    for(int i = 31; i >= 0; i--){
+        printf("%d",the_diff[i]);
         if(j == 8){
             break;
         }

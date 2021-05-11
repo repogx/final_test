@@ -11,38 +11,41 @@ int main(){
     openJoystick();
     
     configure_gyro();
+    
+    printf("\nInitialzing devices\n");
 
-    float p0,p;
-    int ang_disp;
-    check_gyro(); 
-    while(get_step()<3){
-        checkJoystick();
-      // check_gyro();      //Breakdown switch ...rg note
-       printf("%d",get_p());
-       printf("\nThe step = %d\n",get_step());
-       if(get_step()==0){
-           //checkJoystick();
-           //check_gyro();
-           printf("\nEntering the first if\n");
-           display_grid(get_step());
+    coordinate_t data = get_data();
 
-           
+    pi_i2c_t * gyro = get_device();
+
+    int theStep = 0;
+
+    int cnt = 0;
+    
+    printf("\nBefore while\n");
+
+    while(1){
+       printf("\nEntering while\n");
+       getGyroPosition(gyro,&data); 
+       while(1){
+        if(cnt == 109){
+            printf("a = %f b = %f c = %f",data.x,data.y,data.z);
+            cnt = 0;
+            break;
+        }
+        cnt++;
+       }
+            
+
+       if(theStep==0){
+
         } 
+
        else if(get_step() == 1){
-            //check_gyro();
-            //checkJoystick();
-            printf("\nEntering else if main\n"); 
-            p0 = get_p0();
-            printf("step 1 %f\n",p0);          //CHeck first angle
-            display_grid(get_step());
+
         }
        else if(get_step()==2){
-           //check_gyro();
-           //checkJoystick();
-           printf("\nEntering else else if\n");
-           p = get_p();
-           printf("step2 : %f",p);
-           display_grid(get_step());
+
         }
     }
         

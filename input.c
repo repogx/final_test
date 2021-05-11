@@ -137,17 +137,24 @@ void close_gyro(){
 
 void configure_gyro(){
     int count = 0;
-    while(count < 130){
-        getGyroPosition(device,&data);
-        count++;
+    while(getGyroPosition(device,&data) && data.x != 0.0){
+        usleep(100);
     }
+}
+
+pi_i2c_t* get_device(){
+    return device;
+}
+
+coordinate_t get_data(){
+    return data;
 }
 
 void check_gyro(){
     printf("\nEntering check gyro");
     int cnt = 0;
     int times = 0;
-    while(getGyroPosition(device,&data)){
+    while(1 && getGyroPosition(device,&data)){
         if(cnt == 109){
           
             printf("\na = %f, b = %f,c = %f\n",data.x,data.y,data.z);
@@ -155,7 +162,6 @@ void check_gyro(){
             a = data.x;
             b = data.y;
             c = data.z;
-        break;
         }
         cnt++;
     }
