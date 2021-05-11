@@ -26,7 +26,8 @@ int main(){
 
     while(1){
        printf("\nEntering while\n");
-       getGyroPosition(gyro,&data); 
+       getGyroPosition(gyro,&data);
+       theStep = get_step(); 
        while(1){
         if(cnt == 109){
             printf("\n gyro while IF\n");
@@ -42,12 +43,13 @@ int main(){
             printf("\n\nSTEP 0 REACHED\n\n");
         } 
 
-       else if(get_step() == 1){
+       else if(theStep== 1){
             printf("\n\nSTEP 1 REACHED\n\n");
         }
-       else if(get_step()==2){
+       else if(theStep==2){
             printf("\n\nSTEP 2 REACHED\n\n");
         }
+      
        printf("\nReached end of while\n");
     }
         

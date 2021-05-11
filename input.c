@@ -68,7 +68,7 @@ void checkJoystick(){
 void JoyStepper(unsigned int code){
     printf("\nReceived code %d\n",code);
     if(code == KEY_ENTER){
-        if(get_step()==0){
+        if(step==0){
             printf("\nIncrementing step0\n");
             p0 =c;
             printf("%f",p0);   //Set the initial user angle
