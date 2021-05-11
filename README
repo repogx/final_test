@@ -1,0 +1,12 @@
+Robert Gavin - gavinr@udel.edu  700974332
+
+
+// Description of the project
+
+
+The sense hat will display a line pointing in the direction of magnetic north.
+A second line is provided parallel and will turn in the plane with respect to the vertical axis as the user turns/
+When the user is facing the primary direction of travel they must press down on the joy stick to lock in the direction
+Now a third line will diplay that will show error in direction traveled. 
+If the user wants to set a new angle they press down to unlock and down again to set new angle
+WHen the user wants to end the program they press down twice quickly
