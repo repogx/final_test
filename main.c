@@ -21,8 +21,14 @@ int main(){
     int theStep = 0;
 
     int cnt = 0;
+
+    float p,p0,p1;
+
+    int step1Stopper = 1;
     
     printf("\nBefore while\n");
+    
+    display_grid(theStep);
 
     while(1){
        printf("\nEntering while\n");
@@ -32,6 +38,7 @@ int main(){
         if(cnt == 109){
             printf("\n gyro while IF\n");
             printf("a = %f b = %f c = %f",data.x,data.y,data.z);
+            p0 = data.z;
             cnt = 0;
             break;
         }
@@ -43,7 +50,9 @@ int main(){
             printf("\n\nSTEP 0 REACHED\n\n");
         } 
 
-       else if(theStep== 1){
+       else if(theStep== 1 && step1Stopper){
+            display_grid(theStep);
+            step1Stopper = 0;
             printf("\n\nSTEP 1 REACHED\n\n");
         }
        else if(theStep==2){
