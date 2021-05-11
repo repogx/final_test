@@ -63,8 +63,10 @@ int main(){
             display_grid(theStep);
             step2Stopper = 0;
             p = p0;
-            
-
+            float ang_diff = p - p0;
+            int adjusted_angle = angle_adj((int)ang_diff);
+            printf("\nAdjusted angle = %d\n",adjusted_angle);
+            display_diff(adjusted_angle);
        }
        else if(theStep==3){
        
